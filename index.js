@@ -11,10 +11,10 @@ const { RNRestart } = NativeModules;
 
 class ReactNativeRestart {
 
-    static Restart(restartObject) {
-        AsyncStorage.setItem('restartedApp', 'true');
+    static async Restart(restartObject) {
+        await AsyncStorage.setItem('restartedApp', 'true');
         if (restartObject) {
-            AsyncStorage.setItem('restartObject', JSON.stringify(restartObject));
+            await AsyncStorage.setItem('restartObject', JSON.stringify(restartObject));
         }
         RNRestart.Restart();
     }
