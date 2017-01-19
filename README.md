@@ -146,8 +146,18 @@ public class MainApplication extends Application implements ReactApplication {
 ```javascript
 import RNRestart from 'react-native-restart'; // Import package from node modules
 
-// Immediately reload the React Native Bundle
+// Immediately reload the React Native application
 RNRestart.Restart();
+
+// Reload the React Native application with an object that can be fetched after the restart
+
+RNRestart.Restart({param: 'value'});
+
+// After the bundle restarted, get the object sent (Restart reason, maybe?)
+
+RNRestart.getRestartObject().then((value) => console.log(value));
+
+// Get restart
 ```
 
 ## CREDITS
